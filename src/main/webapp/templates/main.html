@@ -11,6 +11,19 @@
     <script type="module" src="/static/js/main.js" defer></script>
 </head>
 <body>
+
 <h1>Welcome to Wheel of Randomness</h1>
+<h4>If you don't know what to watch just spin the wheel</h4>
+
+<div class="genre-container">
+    <div class="card" th:attr="category-id=${genre.getId()}" th:each="genre : ${genres}">
+        <div class="card-header">
+            <h4 class="category-title" th:text="${genre.getName()}"></h4>
+        </div>
+    </div>
+</div>
+
+<div th:replace="footer.html :: copy"></div>
+
 </body>
 </html>

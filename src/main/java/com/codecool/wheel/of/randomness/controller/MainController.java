@@ -21,14 +21,16 @@ import java.io.PrintWriter;
 public class MainController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
-        //TODO implement CategoryDao
-        //CategoryDao categoryDao = new CategoryDao();
+        /**
+         * comment out lines if classes implemented
+         */
+        //GenreDao genreDao = new GenreDao();
 
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
 
         WebContext context = new WebContext(req, resp, req.getServletContext());
-        //context.setVariable("categories", categoryDao.getAll());
 
+        //context.setVariable("categories", genreDao.getAll());
 
         engine.process("main.html", context, resp.getWriter());
     }

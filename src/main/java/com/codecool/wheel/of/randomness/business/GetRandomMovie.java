@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = {"/movies/"})
+@WebServlet(urlPatterns = {"/movies"})
 public class GetRandomMovie extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Movie movie = new Movie();
-
+        //TODO implement class to initialize values for 'movie' by randomly (by genre) selected show data from db
 
         PrintWriter out = resp.getWriter();
         /*
@@ -32,6 +32,6 @@ public class GetRandomMovie extends HttpServlet {
 
         String response = responseJson.toJSONString();
          */
-        out.println("it's a random movie as JSON Object!");
+        out.println("It's a random movie by genre and returned as JSON Object!");
     }
 }
