@@ -21,6 +21,7 @@ public class MovieDaoJdbc implements MovieDao {
         this.dataSource = dataSource;
     }
 
+    // TODO pass a random movie from this filtered list
     @Override
     public List<Movie> getAllMoviesByGenreId(int genreId) {
         try (Connection connection = dataSource.getConnection()) {
@@ -36,7 +37,7 @@ public class MovieDaoJdbc implements MovieDao {
                          "JOIN show_genres ON shows.id = show_genres.show_id " +
                          "JOIN genres ON show_genres.genre_id = genres.id " +
                          "WHERE genres.id = ?" +
-                         "GROUP BY shows.id ";
+                         "GROUP BY shows.id";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, genreId);
             ResultSet rs = statement.executeQuery();
