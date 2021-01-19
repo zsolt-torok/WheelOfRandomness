@@ -29,6 +29,7 @@ public class GetRandomMovie extends HttpServlet {
         PrintWriter out = resp.getWriter();
 
         JSONObject responseJson = new JSONObject();
+        responseJson.put("id", movie.getId());
         responseJson.put("title", movie.getTitle());
         responseJson.put("year", movie.getDate());
         responseJson.put("overview", movie.getOverView());
