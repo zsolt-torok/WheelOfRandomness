@@ -1,42 +1,11 @@
+
+import {dataHandler} from "./data_handler.js";
+
+
 const sectors = [
-    {color:"#f82", label:"Action"},
-    {color:"#0bf", label:"Adventure"},
-    {color:"#fb0", label:"Animation"},
-    {color:"#0fb", label:"50"},
-    {color:"#b0f", label:"100"},
-    {color:"#f82", label:"Stack"},
-    {color:"#0bf", label:"10"},
-    {color:"#fb0", label:"200"},
-    {color:"#0fb", label:"50"},
-    {color:"#b0f", label:"100"},
-    {color:"#f82", label:"Stack"},
-    {color:"#0bf", label:"10"},
-    {color:"#fb0", label:"200"},
-    {color:"#0fb", label:"50"},
-    {color:"#b0f", label:"100"},
-    {color:"#f82", label:"Stack"},
-    {color:"#0bf", label:"10"},
-    {color:"#fb0", label:"200"},
-    {color:"#0fb", label:"50"},
-    {color:"#b0f", label:"100"},
-    {color:"#f82", label:"Stack"},
-    {color:"#0bf", label:"10"},
-    {color:"#fb0", label:"200"},
-    {color:"#0fb", label:"50"},
-    {color:"#b0f", label:"100"},
-    {color:"#b0f", label:"100"},
-    {color:"#f82", label:"Stack"},
-    {color:"#0bf", label:"10"},
-    {color:"#fb0", label:"200"},
-    {color:"#0fb", label:"50"},
-    {color:"#b0f", label:"100"},
-    {color:"#f82", label:"Stack"},
-    {color:"#0bf", label:"10"},
-    {color:"#fb0", label:"200"},
-    {color:"#0fb", label:"50"},
-    {color:"#b0f", label:"100"},
-    // {color:"#f0b", label:"5"},
-    // {color:"#bf0", label:"500"},
+    {color:"#f82", label:"Action", id: 1},
+    {color:"#0bf", label:"Adventure", id: 2},
+    {color:"#fb0", label:"Animation", id: 3},
 ];
 
 const rand = (m, M) => Math.random() * (M - m) + m;
@@ -79,7 +48,9 @@ function drawSector(sector, i) {
 function rotate() {
     const sector = sectors[getIndex()];
     ctx.canvas.style.transform = `rotate(${ang - PI / 2}rad)`;
-    // todo get random movie
+    if (!angVel) {
+        dataHandler.getRandomMovie(sector.id, showRandomMovie)
+    }
     EL_spin.textContent = !angVel ? "SPIN" : sector.label;
     EL_spin.style.background = sector.color;
 }
@@ -100,8 +71,15 @@ function engine() {
 
 // INIT
 sectors.forEach(drawSector);
-rotate(); // Initial rotation
+// rotate(); // Initial rotation
 engine(); // Start engine
 EL_spin.addEventListener("click", () => {
     if (!angVel) angVel = rand(0.25, 0.35);
 });
+
+
+function showRandomMovie(response) {
+    console.log(response)
+    // todo magic
+}
+
