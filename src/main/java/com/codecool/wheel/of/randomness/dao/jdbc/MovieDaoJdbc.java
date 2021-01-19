@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MovieDaoJdbc implements MovieDao {
     private DataSource dataSource;
@@ -59,6 +60,14 @@ public class MovieDaoJdbc implements MovieDao {
             logger.warn("Cannot load all movies.");
             throw new RuntimeException("Error while reading all movies", e);
         }
+    }
+
+    @Override
+    public Movie getRandomMovieByGenreId(int genreId) {
+        List<Movie> movies = getAllMoviesByGenreId(genreId);
+        Random rand = new Random();
+        int randNum = rand.nextInt(movies.size());
+        return movies.get(randNum);
     }
 
 }
