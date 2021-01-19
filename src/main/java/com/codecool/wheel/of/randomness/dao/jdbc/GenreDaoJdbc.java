@@ -23,7 +23,7 @@ public class GenreDaoJdbc implements GenreDao {
     @Override
     public List<Genre> getAll() {
         try (Connection conn = dataSource.getConnection()) {
-            String sql = "SELECT name FROM genres";
+            String sql = "SELECT * FROM genres";
             ResultSet rs = conn.createStatement().executeQuery(sql);
             List<Genre> result = new ArrayList<>();
             while (rs.next()) {
