@@ -13,6 +13,10 @@ public class Movie extends BaseModel {
     private String homePageUrl;
     private double rating;
 
+    public Movie(int id) {
+        super(id);
+    }
+
     public Movie(int id,
                  String title,
                  String date,

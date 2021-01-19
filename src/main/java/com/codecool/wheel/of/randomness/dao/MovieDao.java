@@ -7,4 +7,5 @@ import java.util.List;
 public interface MovieDao {
 
     List<Movie> getAllMoviesByGenreId(int genreId);
+    Movie getRandomMovieByGenreId(int genreId);
 }
