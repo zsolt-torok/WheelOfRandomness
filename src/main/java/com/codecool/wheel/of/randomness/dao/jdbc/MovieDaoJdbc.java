@@ -25,9 +25,9 @@ public class MovieDaoJdbc implements MovieDao {
     @Override
     public List<Movie> getAllMoviesByGenreId(int genreId) {
         try (Connection connection = dataSource.getConnection()) {
-            String sql = "SELECT shows.id AS id," +
+            String sql = "SELECT shows.id AS id, " +
                          "       shows.title AS title, " +
-                         "       shows.year AS year, " +
+                         "       shows.year AS \"year\", " +
                          "       shows.overview AS overview, " +
                          "       shows.runtime AS runtime, " +
                          "       shows.trailer AS trailer, " +
