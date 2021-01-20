@@ -9,7 +9,7 @@ export let modal = {
         let modalBody = modal.querySelector(".modal-body");
 
         let movieData = `
-            <div class="card" style="width: 33rem;" xmlns="http://www.w3.org/1999/html">
+            <div class="card" style="width: 33rem;">
             <iframe class="card-video-top" width="360" height="250" src="${movie.trailer !== null ? movie.trailer.replace("watch?v=", "embed/") : ""}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
               <div class="card-body">
                 <h5 class="card-title">${movie.title}</h5>
