@@ -1,5 +1,6 @@
 
 import {dataHandler} from "./data_handler.js";
+import {modal} from "./modal.js";
 
 
 const sectors = [
@@ -79,7 +80,9 @@ EL_spin.addEventListener("click", () => {
 
 
 function showRandomMovie(response) {
-    console.log(response)
-    // todo magic
+    let closeButton = document.querySelector(".modal .close");
+    closeButton.addEventListener("click", modal.closeModal);
+
+    modal.showModal(response)
 }
 
