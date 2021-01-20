@@ -3,9 +3,6 @@ import {dataHandler} from "./data_handler.js";
 
 
 const sectors = [
-    {color:"#f82", label:"Action", id: 1},
-    {color:"#0bf", label:"Adventure", id: 2},
-    {color:"#fb0", label:"Animation", id: 3},
 ];
 
 const rand = (m, M) => Math.random() * (M - m) + m;
