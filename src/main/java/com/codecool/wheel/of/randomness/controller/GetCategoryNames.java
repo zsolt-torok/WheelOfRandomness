@@ -25,7 +25,6 @@ public class GetCategoryNames  extends HttpServlet {
 
         Gson gson = new Gson();
         String jsonString = gson.toJson(genreList);
-
         out.println(jsonString);
     }
 }
