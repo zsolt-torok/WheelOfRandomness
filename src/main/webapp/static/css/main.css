@@ -1,9 +1,10 @@
-.rainbow-text {
+@import url(https://fonts.googleapis.com/css?family=Lobster);
 
+.rainbow-text {
     /* Font options */
-    font-family: 'Pacifico', cursive;
-    text-shadow: 2px 2px 4px #000000;
-    font-size:40px;
+    text-shadow: 2px 2px 4px #ffffff;
+    font-weight: bold;
+    font-size:60px;
 
     /* Chrome, Safari, Opera */
     -webkit-animation: rainbow 5s infinite;
@@ -57,4 +58,71 @@
     100%{color: orange;}
 }
 
+body {
+    background: #2B2D42;
+    width: auto;
+}
 
+.texts, .footer {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+ .wheel-container {
+     text-align: center;
+     margin-top: 130px;
+     margin-bottom: 130px;
+ }
+
+.texts, .footer, #wheelOfFortune {
+    font-family: "Monospaced", serif;
+}
+
+
+/*text*/
+.circle {
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    background: #D34E24;
+    margin: 150px auto auto;
+}
+
+h1 {
+    color: #F1D302;
+    text-align: center;
+    line-height: 50px;
+    margin-top: -350px;
+    -moz-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+    -webkit-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+    -o-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+    -ms-transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+    transform: scale(1) rotate(-5deg) translateX(0px) translateY(0px) skewX(1deg) skewY(1deg);
+    /*-----------------------*/
+    text-shadow: 1px 1px #468189
+    , 2px 2px #468189, 3px 3px #468189, 4px 4px #468189, 5px 5px #468189, 6px 6px #468189, 7px 7px #468189, 8px 8px #468189, 9px 9px #468189, 10px 10px #468189, 11px 11px #468189, 12px 12px #468189
+    , 13px 13px #468189
+    , 14px 14px #468189
+    , 15px 15px #468189
+    , 16px 16px #468189
+    , 17px 17px #468189
+    , 18px 18px #468189
+    , 19px 19px #468189
+    , 20px 20px #468189
+    , 21px 21px #468189
+    , 22px 22px #468189
+    , 23px 23px #468189
+    , 24px 24px #468189
+    , 25px 25px #468189
+    , 26px 26px 6px #315a5f;
+
+}
+
+span:nth-child(3), span:nth-child(7) {
+    font-size: 60px;
+}
+
+span:nth-child(1), span:nth-child(9), span:nth-child(5)  {
+    font-size: 110px;
+}
