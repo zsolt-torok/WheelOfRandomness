@@ -8,11 +8,12 @@
     <title>Wheel Of Randomness</title>
 
     <link rel="stylesheet" type="text/css" href="/static/css/main.css"/>
-    <script type="module" src="/static/js/main.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/spinner.css"/>
+    <script type="module" src="/static/js/spinner.js" defer></script>
 </head>
 <body>
 
-<h1>Welcome to Wheel of Randomness</h1>
+<h1 class="rainbow-text">Welcome to Wheel of Randomness</h1>
 <h4>If you don't know what to watch just spin the wheel</h4>
 
 <div class="genre-container">
@@ -22,8 +23,13 @@
         </div>
     </div>
 </div>
-
 <div th:replace="footer.html :: copy"></div>
+
+<div id="wheelOfFortune">
+    <canvas id="wheel" width="800" height="800"></canvas>
+    <div id="spin">SPIN</div>
+</div>
+
 
 </body>
 </html>
