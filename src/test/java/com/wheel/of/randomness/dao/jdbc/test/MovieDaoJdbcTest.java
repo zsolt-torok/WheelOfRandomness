@@ -50,4 +50,11 @@ public class MovieDaoJdbcTest {
         assertEquals(showTableSize, allMovie.size());
     }
 
+    @Test
+    void getAll_WithNonExistingGenreId_ShouldReturnNone() {
+        int genreId = 100;
+        int emptyListSize = 0;
+        assertEquals(testJDBC.getAllMoviesByGenreId(genreId).size(), emptyListSize);
+    }
+
 }
