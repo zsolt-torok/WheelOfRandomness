@@ -28,17 +28,18 @@ public class MovieDaoJdbc implements MovieDao {
         try (Connection connection = dataSource.getConnection()) {
             String sql = "SELECT shows.id AS id, " +
                          "       shows.title AS title, " +
-                         "       shows.year AS \"year\", " +
+                         "       EXTRACT(YEAR from shows.year) AS \"year\", " +
                          "       shows.overview AS overview, " +
                          "       shows.runtime AS runtime, " +
                          "       shows.trailer AS trailer, " +
                          "       shows.homepage AS homepage, " +
-                         "       shows.rating AS rating " +
+                         "       round(shows.rating, 1) AS rating " +
                          "FROM shows " +
                          "JOIN show_genres ON shows.id = show_genres.show_id " +
                          "JOIN genres ON show_genres.genre_id = genres.id " +
                          "WHERE genres.id = ?" +
                          "GROUP BY shows.id";
+            System.out.println(sql);
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, genreId);
             ResultSet rs = statement.executeQuery();
