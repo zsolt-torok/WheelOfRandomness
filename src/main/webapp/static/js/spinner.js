@@ -106,5 +106,5 @@ function startEngine() {
     });
 }
 
-
+EL_spin.style.background = "#2B2D42";
 initWheelWithCategoryNames();
