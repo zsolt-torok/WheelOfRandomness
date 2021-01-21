@@ -20,5 +20,11 @@ public class GenreDaoJdbcTest {
         assertEquals(genreTableSize, allGenre.size());
     }
 
+    @Test
+    void getAll_ReturnsGenreType(){
+        List<Genre> allGenre = testJDBC.getAll();
+        assertTrue(allGenre.get(0) instanceof Genre);
+    }
+
 
 }
