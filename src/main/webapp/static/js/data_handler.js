@@ -30,5 +30,9 @@ export let dataHandler = {
 
     getRandomMovie: function (categoryId, callback) {
         dataHandler._api_get(`http://localhost:8080/random-show?genre-id=${categoryId}`, callback);
+    },
+
+    getCategoryNames: function (callback) {
+        dataHandler._api_get("http://localhost:8080/get-all-categories", callback)
     }
 }

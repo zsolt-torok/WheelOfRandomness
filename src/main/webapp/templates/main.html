@@ -2,34 +2,34 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
-    <meta name="author" content="Codecool"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta content="Codecool" name="author"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
 
     <title>Wheel Of Randomness</title>
 
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/spinner.css"/>
-    <script type="module" src="/static/js/spinner.js" defer></script>
+    <link href="/static/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/spinner.css" rel="stylesheet" type="text/css"/>
+    <script defer src="/static/js/spinner.js" type="module"></script>
 </head>
 <body>
 
-<h1 class="rainbow-text">Welcome to Wheel of Randomness</h1>
-<h4>If you don't know what to watch just spin the wheel</h4>
+<!--<div class="texts">-->
+<!--    <h1 class="rainbow-text">Welcome to Wheel of Randomness</h1>-->
+<!--    <h4>If you don't know what to watch just spin the wheel</h4>-->
+<!--</div>-->
 
-<div class="genre-container">
-    <div class="card" th:attr="category-id=${genre.getId()}" th:each="genre : ${genres}">
-        <div class="card-header">
-            <h4 class="category-title" th:text="${genre.getName()}"></h4>
-        </div>
+<div class="circle"></div>
+<h1><span>Welcome</span><br/><span>to the</span><br/><span>Wheel</span><br/><span>of</span><br/><span>Randomness</span></h1>
+
+
+<div class="wheel-container">
+    <div id="wheelOfFortune">
+        <canvas height="800" id="wheel" width="800"></canvas>
+        <div id="spin">SPIN</div>
     </div>
 </div>
+
 <div th:replace="footer.html :: copy"></div>
-
-<div id="wheelOfFortune">
-    <canvas id="wheel" width="800" height="800"></canvas>
-    <div id="spin">SPIN</div>
-</div>
-
 
 </body>
 </html>

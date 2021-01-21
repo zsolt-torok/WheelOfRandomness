@@ -1,5 +1,6 @@
 package com.codecool.wheel.of.randomness.dao.jdbc;
 
+import com.codecool.wheel.of.randomness.config.DataManager;
 import com.codecool.wheel.of.randomness.dao.GenreDao;
 import com.codecool.wheel.of.randomness.model.Genre;
 import org.slf4j.Logger;
@@ -12,12 +13,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenreDaoJdbc implements GenreDao {
+public class GenreDaoJdbc extends DataManager implements GenreDao {
     private DataSource dataSource;
     private static final Logger logger = LoggerFactory.getLogger(MovieDaoJdbc.class);
 
     public GenreDaoJdbc(DataSource dataSource) {
         this.dataSource = dataSource;
+    }
+
+    public GenreDaoJdbc() {
+        this.dataSource = connectDataBase();
     }
 
     @Override
