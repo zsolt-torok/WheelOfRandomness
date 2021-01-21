@@ -12,18 +12,22 @@ export let modal = {
 
         let movieData = `
             <div class="card" style="width: 33rem">
-            <div class="card-video-top" id="player" data-src="${movie.trailer !== null ? movie.trailer : ""}"></div>
               <div class="card-body">
                 <h5 class="card-title">${movie.title}</h5>
-                <p class="card-text">${movie.overview}</p>
+                <p class="card-text">${movie.overview !== null ? movie.overview : 'No overview available'}</p>
               </div>
+              
+              <div class="card-video-top" id="player" data-src="${movie.trailer !== null ? movie.trailer : ""}"></div>
+              
               <ul class="list-group list-group-flush">
                 <li class="runtime">Runtime: ${movie.runtime} min</li>
                 <li class="year">Year: ${movie.year}</li>
                 <li class="rating">Rating: ${movie.rating}</li>
               </ul>
               <div class="card-body">
+                <div class="align-right">
                 <a href="${movie.homepage}" class="card-link" target="_blank">Home Page</a>
+                </div>
               </div>
             </div>
            `;

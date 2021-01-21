@@ -1,0 +1,33 @@
+
+.modal-content {
+    background: #2B2D42;
+    color: white;
+}
+
+.card-body .card-title {
+    text-align: center;
+    font-size: 30px;
+    font-family: inherit, monospace;
+}
+
+.card-body .align-right {
+    text-align: end;
+}
+
+.card-body .card-link {
+    text-decoration: none;
+    color: #F1D302;
+    font-weight: bold;
+    background: #468189;
+    border: 2px dashed #D34E24;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.modal-body .card {
+    width: 90%!important;
+}
+
+.modal-body {
+    align-content: center;
+}
