@@ -17,12 +17,13 @@ export let modal = {
                 <p class="card-text">${movie.overview !== null ? movie.overview : 'No overview available'}</p>
               </div>
               
+              <div class="align-center">
               <div class="card-video-top" id="player" data-src="${movie.trailer !== null ? movie.trailer : ""}"></div>
-              
+              </div>
               <ul class="list-group list-group-flush">
                 <li class="runtime">Runtime: ${movie.runtime} min</li>
                 <li class="year">Year: ${movie.year}</li>
-                <li class="rating">Rating: ${movie.rating}</li>
+                <li class="rating">Rating: ${movie.rating} &#9734</li>
               </ul>
               <div class="card-body">
                 <div class="align-right">

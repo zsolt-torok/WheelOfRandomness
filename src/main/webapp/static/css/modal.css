@@ -2,16 +2,25 @@
 .modal-content {
     background: #2B2D42;
     color: white;
+    font-size: 20px;
+    text-align: justify;
 }
 
 .card-body .card-title {
-    text-align: center;
-    font-size: 30px;
+    text-align: center!important;
+    font-size: 30px!important;
+    color: #F1D302;
     font-family: inherit, monospace;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #468189;
 }
 
 .card-body .align-right {
     text-align: end;
+}
+
+.align-center {
+    text-align: center;
 }
 
 .card-body .card-link {
@@ -25,7 +34,7 @@
 }
 
 .modal-body .card {
-    width: 90%!important;
+    width: 96%!important;
 }
 
 .modal-body {
