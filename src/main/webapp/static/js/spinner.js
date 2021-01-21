@@ -4,28 +4,26 @@ import {modal} from "./modal.js";
 
 
 const sectors = [
-    {color:"#f82", label:"Action", id: 1},
-    {color:"#0bf", label:"Adventure", id: 2},
-    {color:"#fb0", label:"Animation", id: 3},
 ];
 
 const rand = (m, M) => Math.random() * (M - m) + m;
-const tot = sectors.length;
+
+let tot = sectors.length;       // must be changed
 const EL_spin = document.querySelector("#spin");
 const ctx = document.querySelector("#wheel").getContext('2d');
 const dia = ctx.canvas.width;
 const rad = dia / 2;
 const PI = Math.PI;
 const TAU = 2 * PI;
-const arc = TAU / sectors.length;
-
+let arc = TAU / sectors.length;
 const friction = 0.991; // 0.995=soft, 0.99=mid, 0.98=hard
+
 let angVel = 0; // Angular velocity
 let ang = 0; // Angle in radians
-
 const getIndex = () => Math.floor(tot - ang / TAU * tot) % tot;
 
 function drawSector(sector, i) {
+    console.log(sector, " ", i);
     const ang = arc * i;
     ctx.save();
     // COLOR
@@ -44,7 +42,7 @@ function drawSector(sector, i) {
     ctx.fillText(sector.label, rad - 10, 10);
     //
     ctx.restore();
-};
+}
 
 function rotate() {
     const sector = sectors[getIndex()];
@@ -70,15 +68,6 @@ function engine() {
     requestAnimationFrame(engine)
 }
 
-// INIT
-sectors.forEach(drawSector);
-// rotate(); // Initial rotation
-engine(); // Start engine
-EL_spin.addEventListener("click", () => {
-    if (!angVel) angVel = rand(0.25, 0.35);
-});
-
-
 function showRandomMovie(response) {
     let closeButton = document.querySelector(".modal .close");
     closeButton.addEventListener("click", modal.closeModal);
@@ -86,3 +75,36 @@ function showRandomMovie(response) {
     modal.showModal(response)
 }
 
+
+function uploadWheelWithCategoryNames(data) {
+    for (let category of data) {
+        let randColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+        let genre = {color: randColor, label: category.name, id: category.id}
+        sectors.push(genre);
+    }
+    setAttributes();
+    startEngine();
+}
+
+
+function setAttributes() {
+    tot = sectors.length;
+    arc = TAU / sectors.length;
+}
+
+
+function initWheelWithCategoryNames() {
+    dataHandler.getCategoryNames(uploadWheelWithCategoryNames);
+}
+
+
+function startEngine() {
+    sectors.forEach(drawSector);
+    engine();       // Start engine
+    EL_spin.addEventListener("click", () => {
+        if (!angVel) angVel = rand(0.25, 0.35);
+    });
+}
+
+
+initWheelWithCategoryNames();
