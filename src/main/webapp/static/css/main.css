@@ -71,7 +71,7 @@ body {
 }
  .wheel-container {
      text-align: center;
-     margin-top: 130px;
+     margin-top: 300px;
      margin-bottom: 130px;
  }
 
@@ -80,11 +80,16 @@ body {
 }
 
 
-/*text*/
+/*Title*/
+.title-text {
+    margin-top: 300px;
+}
+
 .circle {
     height: 300px;
     width: 300px;
     border-radius: 100%;
+
     background: #D34E24;
     margin: 150px auto auto;
 }
