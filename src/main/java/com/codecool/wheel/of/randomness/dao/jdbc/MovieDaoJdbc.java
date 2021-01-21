@@ -66,8 +66,11 @@ public class MovieDaoJdbc implements MovieDao {
     public Movie getRandomMovieByGenreId(int genreId) {
         List<Movie> movies = getAllMoviesByGenreId(genreId);
         Random rand = new Random();
-        int randNum = rand.nextInt(movies.size());
-        return movies.get(randNum);
+        if (movies.size() > 0) {
+            int randNum = rand.nextInt(movies.size());
+            return movies.get(randNum);
+        }
+        return null;
     }
 
 }
