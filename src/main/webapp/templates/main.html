@@ -11,6 +11,7 @@
     <link href="/static/css/modal.css" rel="stylesheet" type="text/css"/>
     <link href="/static/css/spinner.css" rel="stylesheet" type="text/css"/>
     <script defer src="/static/js/spinner.js" type="module"></script>
+    <script defer src="/static/js/scrollDown.js" type="module"></script>
 </head>
 <body>
 
@@ -19,13 +20,21 @@
 <!--    <h4>If you don't know what to watch just spin the wheel</h4>-->
 <!--</div>-->
 
-<div class="circle"></div>
-<h1><span>Welcome</span><br/><span>to the</span><br/><span>Wheel</span><br/><span>of</span><br/><span>Randomness</span></h1>
+<div class="title-text">
+    <div class="circle"></div>
+    <h1><span>Welcome</span><br/><span>to the</span><br/><span>Wheel</span><br/><span>of</span><br/><span>Randomness</span></h1>
+</div>
 
+<div class="container">
+    <div class="chevron"></div>
+    <div class="chevron"></div>
+    <div class="chevron"></div>
+    <span class="text">Scroll down</span>
+</div>
 
 <div class="wheel-container">
     <div id="wheelOfFortune">
-        <canvas height="800" id="wheel" width="800"></canvas>
+        <canvas height="700" id="wheel" width="700"></canvas>
         <div id="spin">SPIN</div>
     </div>
 </div>
@@ -39,8 +48,8 @@
     </div>
 </div>
 
-<div th:replace="footer.html :: copy"></div>
 
+<div th:replace="footer.html :: copy"></div>
 
 </body>
 </html>
